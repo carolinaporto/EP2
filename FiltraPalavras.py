@@ -1,1 +1,1 @@
-print("Testando o git, Carol")
+print("Testando o git")
