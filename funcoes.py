@@ -39,6 +39,7 @@ def inidica_posicao(sorteada, tentativa):
 
 # função que retorna a palavra digitada já colorida
 def cor(sorteada, tentativa):
+    from termcolor import colored
     lista = inidica_posicao(sorteada, tentativa)
     pal = []
     for c in tentativa:
@@ -47,14 +48,13 @@ def cor(sorteada, tentativa):
     i = 0
     for num in lista:
         if num == 0:
-            pal[i] = f'\033[0;034m{pal[i]}\033[m'
+            pal[i] = colored(f'{pal[i]}', 'blue', attrs = ['bold'])
             i += 1
         elif num == 1:
-            pal[i] = f'\033[0;033m{pal[i]}\033[m'
+            pal[i] = colored(f'{pal[i]}', 'yellow', attrs = ['bold'])
             i += 1
         elif num == 2:
-            pal[i] = f'\033[0;037m{pal[i]}\033[m'
+            pal[i] = colored(f'{pal[i]}', 'grey', attrs = ['bold'])
             i += 1
-    tentativa = (" ").join(pal)
-    tentativa = tentativa.replace(" ","")
+    tentativa = ("").join(pal)
     return tentativa
