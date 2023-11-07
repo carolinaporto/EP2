@@ -12279,15 +12279,17 @@ while jogo['tentativas'] > 0:
     chute = input('Digite uma palavra: ')
 
     if chute == sorteada:
-        print('Boa pobre')
+        print('Boa jenio')
         break
     else:
         print(cor(sorteada, chute))
         jogo['tentativas'] -= 1
         tentativas = jogo['tentativas']
-        if tentativas > 0:
+        if tentativas > 1:
             print(f'Você tem {tentativas} tentativas restantes')
+        elif tentativas == 1:
+            print(f'Você tem {tentativas} tentativa restantes')
 
 if tentativas == 0:
-    print('Você mamou')
+    print('Você perdeu')
     print(f'A palavra correta era {sorteada}')
