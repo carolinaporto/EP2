@@ -12266,4 +12266,4 @@ words = ["a", "Aarao", "aba", "abacate", "abacateiro", "abacateiros", "abacates"
     "zunirieis", "zunirmo", "zunirmos", "zunis", "zunisse", "zunisseis", "zunissem", "zunissemos", "zunisses", "zuniste", "zunistes", "zuniu", "zuno", "zunzum", "zunzuns", "zurra", "zurrado", "zurrai", "zurrais", "zurram", 
     "zurramo", "zurramos", "zurrando", "zurrar", "zurrara", "zurraram", "zurraramos", "zurrarao", "zurraras", "zurrardes", "zurrarei", "zurrareis", "zurrarem", "zurraremo", "zurraremos", "zurrares", "zurraria", "zurrariam", "zurrariamos", "zurrarias", 
     "zurrarieis", "zurrarmo", "zurrarmos", "zurras", "zurrasse", "zurrasseis", "zurrassem", "zurrassemos", "zurrasses", "zurraste", "zurrastes", "zurrava", "zurravam", "zurravamos", "zurravas", "zurraveis", "zurre", "zurrei", "zurreis", "zurrem", 
-    "zurremo", "zurremos", "zurres", "zurro", "zurros", "zurrou"]
+    "zurremo", "zurremos", "zurres", "zurro", "zurros", "zurrou"] 
