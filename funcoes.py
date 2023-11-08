@@ -38,7 +38,7 @@ def inidica_posicao(sorteada, tentativa):
                 
     return lista
 
-# função que retorna a palavra digitada já colorida
+# função que retorna uma lista com as letras coloridas
 def cor(sorteada, tentativa):
     lista = inidica_posicao(sorteada, tentativa)
     pal = []
