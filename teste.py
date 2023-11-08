@@ -1,4 +1,5 @@
 from funcoes import *
+n = int(input('Você quer adivinhar uma palavra com quantas letras?'))
 base = filtra([
     "a", "Aarao", "aba", "abacate", "abacateiro", "abacateiros", "abacates", "abacaxi", "abacaxis", "abaciais", "abacial", "abaco", "abacos", "abade", "abades", "abadessa", "abadessas", "abadia", "abadias", "abafa", 
     "abafada", "abafadas", "abafadica", "abafadicas", "abafadico", "abafadicos", "abafado", "abafados", "abafai", "abafais", "abafam", "abafamento", "abafamentos", "abafamo", "abafamos", "abafando", "abafar", "abafara", "abafaram", "abafaramos", 
@@ -12269,14 +12270,17 @@ base = filtra([
     "zurramo", "zurramos", "zurrando", "zurrar", "zurrara", "zurraram", "zurraramos", "zurrarao", "zurraras", "zurrardes", "zurrarei", "zurrareis", "zurrarem", "zurraremo", "zurraremos", "zurrares", "zurraria", "zurrariam", "zurrariamos", "zurrarias", 
     "zurrarieis", "zurrarmo", "zurrarmos", "zurras", "zurrasse", "zurrasseis", "zurrassem", "zurrassemos", "zurrasses", "zurraste", "zurrastes", "zurrava", "zurravam", "zurravamos", "zurravas", "zurraveis", "zurre", "zurrei", "zurreis", "zurrem", 
     "zurremo", "zurremos", "zurres", "zurro", "zurros", "zurrou", 
-], 5)
+], n)
 
-jogo = inicializa(base)
+jogo = inicializa(base, n)
 
 while jogo['tentativas'] > 0:
     sorteada = jogo['sorteada']
     
     chute = input('Digite uma palavra: ')
+    while not chute in base or len(chute) != n:
+        print('Entrada inválida')
+        chute = input('Digite outra palavra: ')
 
     if chute == sorteada:
         print('Boa jenio')

@@ -9,8 +9,9 @@ def filtra(palavras, n):
     
     return lista
 
-def inicializa(palavras):
+def inicializa(base, n):
     import random
+    palavras = filtra(base, n)
     dic = {}
    
     dic['n'] = len(palavras[0])
