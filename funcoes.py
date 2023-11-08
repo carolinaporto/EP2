@@ -1,3 +1,6 @@
+from termcolor import colored
+import random
+
 def filtra(palavras, n):
     lista = []
 
@@ -9,15 +12,13 @@ def filtra(palavras, n):
     
     return lista
 
-def inicializa(base, n):
-    import random
-    palavras = filtra(base, n)
+def inicializa(base):
     dic = {}
    
-    dic['n'] = len(palavras[0])
-    dic['tentativas'] = len(palavras[0])+1
+    dic['n'] = len(base[0])
+    dic['tentativas'] = len(base[0])+1
     dic['especuladas'] = []
-    dic['sorteada'] = random.choice(palavras)
+    dic['sorteada'] = random.choice(base)
 
     return dic
 
@@ -32,7 +33,6 @@ def inidica_posicao(sorteada, tentativa):
                     lista.append(0)
                 else:
                     lista.append(1)
-            
             else:
                 lista.append(2)
                 
@@ -40,7 +40,6 @@ def inidica_posicao(sorteada, tentativa):
 
 # função que retorna a palavra digitada já colorida
 def cor(sorteada, tentativa):
-    from termcolor import colored
     lista = inidica_posicao(sorteada, tentativa)
     pal = []
     for c in tentativa:
@@ -57,5 +56,5 @@ def cor(sorteada, tentativa):
         elif num == 2:
             pal[i] = colored(f'{pal[i]}', 'grey', attrs = ['bold'])
             i += 1
-    tentativa = ("").join(pal)
-    return tentativa
+    
+    return pal
