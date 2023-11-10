@@ -1,4 +1,4 @@
-words = ["a", "Aarao", "aba", "abacate", "abacateiro", "abacateiros", "abacates", "abacaxi", "abacaxis", "abaciais", "abacial", "abaco", "abacos", "abade", "abades", "abadessa", "abadessas", "abadia", "abadias", "abafa", 
+palavras = ["a", "Aarao", "aba", "abacate", "abacateiro", "abacateiros", "abacates", "abacaxi", "abacaxis", "abaciais", "abacial", "abaco", "abacos", "abade", "abades", "abadessa", "abadessas", "abadia", "abadias", "abafa", 
     "abafada", "abafadas", "abafadica", "abafadicas", "abafadico", "abafadicos", "abafado", "abafados", "abafai", "abafais", "abafam", "abafamento", "abafamentos", "abafamo", "abafamos", "abafando", "abafar", "abafara", "abafaram", "abafaramos", 
     "abafarao", "abafaras", "abafardes", "abafarei", "abafareis", "abafarem", "abafaremo", "abafaremos", "abafares", "abafaria", "abafariam", "abafariamos", "abafarias", "abafarieis", "abafarmo", "abafarmos", "abafas", "abafasse", "abafasseis", "abafassem", 
     "abafassemos", "abafasses", "abafaste", "abafastes", "abafava", "abafavam", "abafavamos", "abafavas", "abafaveis", "abafe", "abafei", "abafeis", "abafem", "abafemo", "abafemos", "abafes", "abafo", "abafou", "abaixa", "abaixada", 
@@ -12266,4 +12266,12 @@ words = ["a", "Aarao", "aba", "abacate", "abacateiro", "abacateiros", "abacates"
     "zunirieis", "zunirmo", "zunirmos", "zunis", "zunisse", "zunisseis", "zunissem", "zunissemos", "zunisses", "zuniste", "zunistes", "zuniu", "zuno", "zunzum", "zunzuns", "zurra", "zurrado", "zurrai", "zurrais", "zurram", 
     "zurramo", "zurramos", "zurrando", "zurrar", "zurrara", "zurraram", "zurraramos", "zurrarao", "zurraras", "zurrardes", "zurrarei", "zurrareis", "zurrarem", "zurraremo", "zurraremos", "zurrares", "zurraria", "zurrariam", "zurrariamos", "zurrarias", 
     "zurrarieis", "zurrarmo", "zurrarmos", "zurras", "zurrasse", "zurrasseis", "zurrassem", "zurrassemos", "zurrasses", "zurraste", "zurrastes", "zurrava", "zurravam", "zurravamos", "zurravas", "zurraveis", "zurre", "zurrei", "zurreis", "zurrem", 
-    "zurremo", "zurremos", "zurres", "zurro", "zurros", "zurrou"] 
+    "zurremo", "zurremos", "zurres", "zurro", "zurros", "zurrou"]
+
+#achando quais tamanhos de palavra estão na base
+def acha_tamanhos(lista):
+    tamanhos = []
+    for e in lista:
+        if not len(e) in tamanhos:
+            tamanhos.append(len(e))
+    return sorted(tamanhos)

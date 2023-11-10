@@ -1,17 +1,39 @@
-from funcoes import *
-from base import words
+from funcoes import inidica_posicao, inicializa, filtra, cor
+from base import *
 
 while True:
     n = int(input('Você quer adivinhar uma palavra com quantas letras? '))
-
-    base = filtra(words, n)
+    while n > 23:
+        print('Número de letras inválido')
+        n = int(input('Digite outro número (até 23):'))
+    
+    # Iniciando o jogo
+    base = filtra(palavras, n)
     jogo = inicializa(base)
+    sorteada = jogo['sorteada']
 
+    # Jogo
     while jogo['tentativas'] > 0:
-        sorteada = jogo['sorteada']
         chute = input('Digite uma palavra: ')
+        
+    # Validação de entrada
+        while not chute in palavras: # Checa palavra desconhecida
+            #Desistência
+            if chute == "Desisto" or chute == "desisto":
+                break
+            
+            print(f'Palavra desconhecida\nVocê tem {jogo["tentativas"]} tentativas\n')
+            chute = input('Digite outra palavra: ')
 
-        # Checa se o usuario quer desistir
+        while len(chute) != n: # Checa palavra com numero de letras diferente
+            # Desistência
+            if chute == "Desisto" or chute == "desisto":
+                break
+
+            print(f'Apenas palavras de {n} letras\nVocê tem {jogo["tentativas"]} tentativas\n')
+            chute = input('Digite outra palavra: ')
+
+        # Checa desistência
         if chute == "Desisto" or chute == "desisto":
             certeza = input("Tem certeza que deseja desisir? (s/n) ")
             if certeza == "s":
@@ -20,19 +42,8 @@ while True:
             else:
                 print(f"Você tem {jogo['tentativas']} tentativas\n")
                 chute = input('Digite outra palavra: ')
-        
-        #Checa palavra com numero de letras diferente
-        while len(chute) != n:
-            print(f'Apenas palavras de {n} letras\nVocê tem {jogo["tentativas"]} tentativas\n')
-            chute = input('Digite outra palavra: ')
 
-        #Checa palavra desconhecida
-        while not chute in base:
-            print(f'Palavra desconhecida\nVocê tem {jogo["tentativas"]} tentativas\n')
-            chute = input('Digite outra palavra: ')
-        
-        
-        #Se palavra digitada == palavra sorteada
+        # Se palavra digitada == palavra sorteada
         if chute == sorteada:
             print('Boa jenio')
             break
@@ -45,13 +56,13 @@ while True:
             elif tentativas == 1:
                 print(f'Você tem {tentativas} tentativa restantes')
 
-    if tentativas == 0:
+    if jogo['tentativas'] == 0:
         print('Você perdeu')
         print(f'A palavra correta era {sorteada}')
     
     dnv = input("Voce deseja jogar novamente? (s/n) ")
     if dnv == "n":
-        print("\n\n\nAte a proxima!!!")
+        print("\n\nAte a proxima!!!")
         break
 
 
