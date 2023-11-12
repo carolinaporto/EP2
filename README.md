@@ -1,6 +1,7 @@
 # EP2
+Projeto por: Maria Carolina Pôrto e Thomas Kassabian
 
-**Sobre o projeto:**
+## **Sobre o projeto:**
 
 Repositório criado para o desenvimento do EP2: jogo TERMO.
 
@@ -20,6 +21,7 @@ Caso o usuário deseje desistir, ele pode digitar "Desisto" ou "desisto" para pa
 
 Caso o usuário não consiga advinhar a palavra sorteada dentro do número estipulado de tentativas, ele perde e a palavra correta é revelada.
 
+**Para jogar, rode o arquivo Jogo.py**
 
 Boa sorte e divirta-se!!! 
 
