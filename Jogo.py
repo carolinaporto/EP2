@@ -8,6 +8,7 @@ print("\nPara desistir, digite: desisto")
 
 print(f"\n Regras:\n  - Dependendo do número de letras (n) da palavra que você escolher advinhar, você terá {colored('n+1', 'red')} tentativas para acertá-la.\n  - A cada tentativa, a palavra testada terá suas letras coloridas conforme:\n    . {colored('Azul', 'blue', attrs = ['bold'])}   : a letra está na posição correta;\n    . {colored('Amarelo', 'yellow', attrs = ['bold'])}: a palavra tem a letra, mas está na posição errada;\n    . {colored('Cinza', 'grey', attrs = ['bold'])}: a palavra não tem a letra.\n  - Os acentos são ignorados;\n  - As palavras podem possuir letras repetidas.\n\n")
 
+# Loop maior do jogo
 while True:
     n = int(input('Você quer adivinhar uma palavra com quantas letras? '))
     while n > 23:
