@@ -15,10 +15,13 @@ while True:
         print('Número de letras inválido')
         n = int(input('Digite outro número (até 23):'))
 
+    print("Já tenho uma palavra! Tente adivinhá-la!\n")
+
     # Iniciando o jogo
     base = filtra(palavras, n)
     jogo = inicializa(base)
     sorteada = jogo['sorteada']
+    display = " "
 
     # Jogo
     while jogo['tentativas'] > 0:
@@ -69,7 +72,7 @@ while True:
     # Mensagem de derrota
     if jogo['tentativas'] == 0:
         print('Você perdeu')
-        print(f'A palavra correta era {sorteada}')
+        print(f'A palavra correta era {sorteada}\n')
     
     # Jogar novamente
     dnv = input("Voce deseja jogar novamente? (s/n) ")
