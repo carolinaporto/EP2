@@ -33,7 +33,7 @@ while True:
             if chute == "Desisto" or chute == "desisto":
                 certeza = input("Tem certeza que deseja desisir? (s/n) ")
                 if certeza == "s":
-                    print(f">>> Que deselegante desistir, a palavra era: {sorteada}\n")
+                    print(f'{colored(f">>> Que deselegante desistir, a palavra era: {sorteada}", "cyan")}\n')
                     break
                 else:
                     print(f"Você tem {jogo['tentativas']} tentativas\n")
@@ -41,10 +41,10 @@ while True:
             
             # Valida a entrada
             if not chute in palavras and chute != 'desisto': # Palavra na base de palavras
-                print(f'Palavra desconhecida\nVocê tem {jogo["tentativas"]} tentativas\n')
+                print(f'{colored("Palavra desconhecida", "green")}\nVocê tem {jogo["tentativas"]} tentativas\n')
                 chute = input('Digite uma palavra conhecida: ')
             elif len(chute) != n and chute != 'desisto': # Palavra com o número certo de letras
-                print(f'Apenas palavras de {n} letras\nVocê tem {jogo["tentativas"]} tentativas\n')
+                print(f'{colored(f"Apenas palavras de {n} letras", "magenta")}\nVocê tem {jogo["tentativas"]} tentativas\n')
                 chute = input(f'Digite uma palavra com {n} letras: ')
             elif (chute in palavras) and len(chute) == n and chute != 'desisto':
                 break
@@ -74,8 +74,8 @@ while True:
 
     # Mensagem de derrota
     if jogo['tentativas'] == 0 and chute != sorteada:
-        print('Você perdeu')
-        print(f'A palavra correta era {sorteada}\n')
+        print(f'{colored("Você perdeu!", "red")}\n')
+        print(f'A palavra correta era: {sorteada}\n')
     
     # Jogar novamente
     dnv = input("Voce deseja jogar novamente? (s/n) ")
