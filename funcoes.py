@@ -58,3 +58,14 @@ def cor(sorteada, tentativa):
             i += 1
     
     return pal
+
+def layout(n, sorteada, tentativa, lista):
+    chute = cor(sorteada, tentativa)
+    if lista == " ":
+        lista += " ---"*n + "\n"
+    for i in range(len(chute)):
+        lista +=  (" | " + str(chute[i]))
+    lista += " |\n "
+    lista += " ---"*n + "\n"
+    return lista
+
