@@ -59,13 +59,15 @@ def cor(sorteada, tentativa):
     
     return pal
 
-def layout(n, sorteada, tentativa, lista):
+def layout(n, sorteada, tentativa, display):
+    print("Display = ", display)
     chute = cor(sorteada, tentativa)
-    if lista == " ":
-        lista += " ---"*n + "\n"
+    if display == " ":
+        display += " ---"*n + "\n"
 
     for i in range(len(chute)):
-        lista +=  (" | " + str(chute[i]))
-    lista += " |\n ---"*n + "\n"
-    return lista
+        display +=  (" | " + str(chute[i]))
+    display += " |\n "
+    display += (" ---"*n + "\n")
+    return display
 
