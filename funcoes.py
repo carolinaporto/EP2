@@ -59,6 +59,7 @@ def cor(sorteada, tentativa):
     
     return pal
 
+#função que realiza o layout das palavras digitadas no terminal
 def layout(n, sorteada, tentativa, display):
     print(display)
     chute = cor(sorteada, tentativa)
