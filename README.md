@@ -1,4 +1,5 @@
 # EP2
+Projeto por: Maria Carolina Pôrto e Thomas Kassabian
 
 **Sobre o projeto:**
 
