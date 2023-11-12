@@ -11,15 +11,17 @@ print(f"\n Regras:\n  - Dependendo do número de letras (n) da palavra que você
 
 while True:
     n = int(input('Você quer adivinhar uma palavra com quantas letras? '))
-    print("\nSorteando uma palavra... \nJá tenho uma palavra! Tente adivinhá-la!\n")
+    while n > 23:
+        print('Número de letras inválido')
+        n = int(input('Digite outro número (até 23):'))
 
-    display = " "
-
-    base = filtra(words, n)
+    # Iniciando o jogo
+    base = filtra(palavras, n)
     jogo = inicializa(base)
+    sorteada = jogo['sorteada']
 
+    # Jogo
     while jogo['tentativas'] > 0:
-        sorteada = jogo['sorteada']
         chute = input('Digite uma palavra: ')
 
         # Enquanto as condições de jogo não são apropriadas:
@@ -64,13 +66,15 @@ while True:
             elif tentativas == 1:
                 print(f'Você tem {tentativas} tentativa restantes')
 
-    if tentativas == 0:
+    # Mensagem de derrota
+    if jogo['tentativas'] == 0:
         print('Você perdeu')
         print(f'A palavra correta era {sorteada}')
     
+    # Jogar novamente
     dnv = input("Voce deseja jogar novamente? (s/n) ")
     if dnv == "n":
-        print("\n\n\nAte a proxima!!!")
+        print("\n\nAte a proxima!!!")
         break
 
 
