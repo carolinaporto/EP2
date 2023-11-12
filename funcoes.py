@@ -12,13 +12,13 @@ def filtra(palavras, n):
     
     return lista
 
-def inicializa(base):
+def inicializa(palavras):
     dic = {}
    
-    dic['n'] = len(base[0])
-    dic['tentativas'] = len(base[0])+1
+    dic['n'] = len(palavras[0])
+    dic['tentativas'] = len(palavras[0])+1
     dic['especuladas'] = []
-    dic['sorteada'] = random.choice(base)
+    dic['sorteada'] = random.choice(palavras)
 
     return dic
 
