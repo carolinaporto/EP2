@@ -22,6 +22,7 @@ Caso o usuário deseje desistir, ele pode digitar "Desisto" ou "desisto" para pa
 Caso o usuário não consiga advinhar a palavra sorteada dentro do número estipulado de tentativas, ele perde e a palavra correta é revelada.
 
 **Para jogar, rode o arquivo Jogo.py**
+
 Boa sorte e divirta-se!!! 
 
 
