@@ -1,8 +1,19 @@
+import random
+from termcolor import colored
 from funcoes import *
-from base import words
+from base import *
+
+# Inicio do jogo:
+print(" =========================== \n|                           |\n| Bem-vindo ao Insper Termo |\n|                           |\n ==== Design de Software === ")
+print("Comandos: desisto")
+
+print(f"\n Regras:\n  - Dependendo do número de letras (n) da palavra que você escolher advinhar, você terá {colored('n+1', 'red')} tentativas para acertá-la.\n  - A cada tentativa, a palavra testada terá suas letras coloridas conforme:\n    . {colored('Azul', 'blue', attrs = ['bold'])}   : a letra está na posição correta;\n    . {colored('Amarelo', 'yellow', attrs = ['bold'])}: a palavra tem a letra, mas está na posição errada;\n    . {colored('Cinza', 'grey', attrs = ['bold'])}: a palavra não tem a letra.\n  - Os acentos são ignorados;\n  - As palavras podem possuir letras repetidas.\n\n")
 
 while True:
     n = int(input('Você quer adivinhar uma palavra com quantas letras? '))
+    print("\nSorteando uma palavra... \nJá tenho uma palavra! Tente adivinhá-la!\n")
+
+    display = " "
 
     base = filtra(words, n)
     jogo = inicializa(base)
@@ -11,33 +22,41 @@ while True:
         sorteada = jogo['sorteada']
         chute = input('Digite uma palavra: ')
 
-        # Checa se o usuario quer desistir
-        if chute == "Desisto" or chute == "desisto":
-            certeza = input("Tem certeza que deseja desisir? (s/n) ")
-            if certeza == "s":
-                print(f">>> Que deselegante desistir, a palavra era: {sorteada}\n")
-                break
-            else:
-                print(f"Você tem {jogo['tentativas']} tentativas\n")
+        # Enquanto as condições de jogo não são apropriadas:
+        while (chute == "Desisto" or chute == "desisto") or (len(chute) != n) or (chute not in base):
+             # Checa se o usuario quer desistir
+            if (chute == "Desisto" or chute == "desisto"):
+                certeza = input("Tem certeza que deseja desisir? (s/n) ")
+                if certeza == "s":
+                    print(f">>> Que deselegante desistir, a palavra era: {sorteada}\n")
+                    break
+                else:
+                    print(f"Você tem {jogo['tentativas']} tentativas\n")
+                    chute = input('Digite outra palavra: ')
+        
+            #Checa numero de letras das palavras:
+            if len(chute) != n:
+                print(f"\nApenas palavras de {n} letras\nVocê tem {jogo['tentativas']} tentativas\n")
+                chute = input('Digite outra palavra: ')
+
+            #Checa palavra desconhecida:
+            if not chute in base:
+                print(f'\nPalavra desconhecida\nVocê tem {jogo["tentativas"]} tentativas\n')
                 chute = input('Digite outra palavra: ')
         
-        #Checa palavra com numero de letras diferente
-        while len(chute) != n:
-            print(f'Apenas palavras de {n} letras\nVocê tem {jogo["tentativas"]} tentativas\n')
-            chute = input('Digite outra palavra: ')
 
-        #Checa palavra desconhecida
-        while not chute in base:
-            print(f'Palavra desconhecida\nVocê tem {jogo["tentativas"]} tentativas\n')
-            chute = input('Digite outra palavra: ')
-        
-        
-        #Se palavra digitada == palavra sorteada
+        #Se palavra digitada é igual à palavra sorteada
         if chute == sorteada:
-            print('Boa jenio')
+            display = layout(n, sorteada, chute, display)
+            print(display)
+
+            jogo['tentativas'] -= 1
+            print(f"*** Parabéns! Você acertou após {n+1-jogo['tentativas']} tentativas!")
             break
         else:
-            print(cor(sorteada, chute))
+            display = layout(n, sorteada, chute, display)
+            print(display)
+
             jogo['tentativas'] -= 1
             tentativas = jogo['tentativas']
             if tentativas > 1:
