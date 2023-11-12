@@ -60,7 +60,7 @@ def cor(sorteada, tentativa):
     return pal
 
 def layout(n, sorteada, tentativa, display):
-    print("Display = ", display)
+    print(display)
     chute = cor(sorteada, tentativa)
     if display == " ":
         display += " ---"*n + "\n"
